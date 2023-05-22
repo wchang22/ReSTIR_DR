@@ -1,0 +1,117 @@
+.visible .func reservoir_sampling(
+	.param .b32 reservoir_sampling_param_0,
+	.param .b32 reservoir_sampling_param_1,
+	.param .b64 reservoir_sampling_param_2,
+	.param .b64 reservoir_sampling_param_3,
+	.param .b64 reservoir_sampling_param_4,
+	.param .b64 reservoir_sampling_param_5,
+	.param .b64 reservoir_sampling_param_6,
+	.param .b64 reservoir_sampling_param_7,
+	.param .b64 reservoir_sampling_param_8,
+	.param .b64 reservoir_sampling_param_9,
+	.param .b64 reservoir_sampling_param_10,
+	.param .b32 reservoir_sampling_param_11,
+	.param .b32 reservoir_sampling_param_12,
+	.param .b32 reservoir_sampling_param_13,
+	.param .b32 reservoir_sampling_param_14,
+	.param .b32 reservoir_sampling_param_15,
+	.param .b32 reservoir_sampling_param_16,
+	.param .b32 reservoir_sampling_param_17,
+	.param .b32 reservoir_sampling_param_18
+)
+{
+	.reg .pred 	%p<6>;
+	.reg .f32 	%f<12>;
+	.reg .b32 	%r<14>;
+	.reg .b64 	%rd<38>;
+
+	ld.param.u32 	%r3, [reservoir_sampling_param_0];
+	ld.param.f32 	%f2, [reservoir_sampling_param_1];
+	ld.param.u64 	%rd12, [reservoir_sampling_param_2];
+	ld.param.u64 	%rd13, [reservoir_sampling_param_3];
+	ld.param.u64 	%rd14, [reservoir_sampling_param_4];
+	ld.param.u64 	%rd15, [reservoir_sampling_param_5];
+	ld.param.u64 	%rd16, [reservoir_sampling_param_6];
+	ld.param.u64 	%rd17, [reservoir_sampling_param_7];
+	ld.param.u64 	%rd18, [reservoir_sampling_param_8];
+	ld.param.u64 	%rd19, [reservoir_sampling_param_9];
+	ld.param.u64 	%rd20, [reservoir_sampling_param_10];
+	ld.param.f32 	%f3, [reservoir_sampling_param_11];
+	ld.param.u32 	%r2, [reservoir_sampling_param_12];
+	ld.param.f32 	%f4, [reservoir_sampling_param_13];
+	ld.param.f32 	%f5, [reservoir_sampling_param_14];
+	ld.param.f32 	%f6, [reservoir_sampling_param_15];
+	ld.param.f32 	%f7, [reservoir_sampling_param_16];
+	ld.param.f32 	%f8, [reservoir_sampling_param_17];
+	ld.param.f32 	%f9, [reservoir_sampling_param_18];
+	cvta.to.global.u64 	%rd1, %rd14;
+	cvta.to.global.u64 	%rd2, %rd20;
+	cvta.to.global.u64 	%rd3, %rd19;
+	cvta.to.global.u64 	%rd4, %rd18;
+	cvta.to.global.u64 	%rd5, %rd17;
+	cvta.to.global.u64 	%rd6, %rd16;
+	cvta.to.global.u64 	%rd7, %rd15;
+	cvta.to.global.u64 	%rd8, %rd12;
+	mov.u32 	%r4, %ntid.x;
+	mov.u32 	%r5, %ctaid.x;
+	mov.u32 	%r6, %tid.x;
+	mad.lo.s32 	%r1, %r5, %r4, %r6;
+	cvt.u64.u32 	%rd9, %r3;
+	cvta.to.global.u64 	%rd21, %rd13;
+	mul.wide.u32 	%rd22, %r3, 8;
+	add.s64 	%rd10, %rd21, %rd22;
+
+$L__BB0_1:
+	ld.global.u64 	%rd23, [%rd10];
+	cvt.u32.u64 	%r7, %rd23;
+	mov.b32 	%f10, %r7;
+	shr.u64 	%rd24, %rd23, 32;
+	cvt.u32.u64 	%r8, %rd24;
+	add.f32 	%f11, %f10, %f3;
+	mul.f32 	%f1, %f10, %f2;
+	setp.lt.f32 	%p1, %f1, %f3;
+	selp.b32 	%r9, %r1, %r8, %p1;
+	cvt.u64.u32 	%rd25, %r9;
+	mov.b32 	%r10, %f11;
+	cvt.u64.u32 	%rd26, %r10;
+	bfi.b64 	%rd27, %rd25, %rd26, 32, 32;
+	atom.global.cas.b64 	%rd28, [%rd10], %rd23, %rd27;
+	setp.ne.s64 	%p2, %rd28, %rd23;
+	@%p2 bra 	$L__BB0_1;
+
+	setp.geu.f32 	%p3, %f1, %f3;
+	@%p3 bra 	$L__BB0_8;
+
+	shl.b64 	%rd29, %rd9, 2;
+	add.s64 	%rd11, %rd8, %rd29;
+
+$L__BB0_4:
+	atom.global.exch.b32 	%r11, [%rd11], 1;
+	setp.eq.s32 	%p4, %r11, 1;
+	@%p4 bra 	$L__BB0_4;
+
+	ld.global.u32 	%r12, [%rd10+4];
+	setp.ne.s32 	%p5, %r1, %r12;
+	@%p5 bra 	$L__BB0_7;
+
+	add.s64 	%rd31, %rd7, %rd29;
+	st.global.f32 	[%rd31], %f4;
+	add.s64 	%rd32, %rd6, %rd29;
+	st.global.f32 	[%rd32], %f5;
+	add.s64 	%rd33, %rd5, %rd29;
+	st.global.f32 	[%rd33], %f6;
+	add.s64 	%rd34, %rd4, %rd29;
+	st.global.f32 	[%rd34], %f7;
+	add.s64 	%rd35, %rd3, %rd29;
+	st.global.f32 	[%rd35], %f8;
+	add.s64 	%rd36, %rd2, %rd29;
+	st.global.f32 	[%rd36], %f9;
+	add.s64 	%rd37, %rd1, %rd29;
+	st.global.u32 	[%rd37], %r2;
+
+$L__BB0_7:
+	atom.global.exch.b32 	%r13, [%rd11], 0;
+
+$L__BB0_8:
+	ret;
+}
