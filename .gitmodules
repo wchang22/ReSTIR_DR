@@ -1,0 +1,53 @@
+[submodule "ext/zlib"]
+    path = ext/zlib
+    url = https://github.com/mitsuba-renderer/zlib
+[submodule "ext/libpng"]
+    path = ext/libpng
+    url = https://github.com/mitsuba-renderer/libpng.git
+[submodule "ext/libjpeg"]
+    path = ext/libjpeg
+    url = https://github.com/mitsuba-renderer/libjpeg
+[submodule "ext/openexr"]
+    path = ext/openexr
+    url = https://github.com/mitsuba-renderer/openexr
+[submodule "ext/tinyformat"]
+    path = ext/tinyformat
+    url = https://github.com/mitsuba-renderer/tinyformat
+[submodule "ext/pugixml"]
+    path = ext/pugixml
+    url = https://github.com/mitsuba-renderer/pugixml
+[submodule "ext/asmjit"]
+    path = ext/asmjit
+    url = https://github.com/mitsuba-renderer/asmjit
+[submodule "ext/pybind11"]
+    path = ext/pybind11
+    url = https://github.com/pybind/pybind11
+[submodule "ext/nanogui"]
+    path = ext/nanogui
+    url = https://github.com/mitsuba-renderer/nanogui
+[submodule "resources/data"]
+    path = resources/data
+    url = https://github.com/mitsuba-renderer/mitsuba-data
+    shallow = true
+[submodule "ext/embree"]
+    path = ext/embree
+    url = https://github.com/mitsuba-renderer/embree
+[submodule "ext/ittnotify"]
+	path = ext/ittnotify
+	url = https://github.com/intel/IntelSEAPI
+[submodule "ext/fastfloat"]
+	path = ext/fastfloat
+	url = https://github.com/fastfloat/fast_float
+[submodule "tutorials"]
+	path = tutorials
+	url = https://github.com/mitsuba-renderer/mitsuba-tutorials
+	shallow = true
+[submodule "ext/drjit/ext/pybind11"]
+	path = ext/drjit/ext/pybind11
+	url = https://github.com/pybind/pybind11
+[submodule "ext/drjit/ext/drjit-core/ext/nanothread"]
+	path = ext/drjit/ext/drjit-core/ext/nanothread
+	url = https://github.com/mitsuba-renderer/nanothread
+[submodule "ext/drjit/ext/drjit-core/ext/robin_map"]
+	path = ext/drjit/ext/drjit-core/ext/robin_map
+	url = https://github.com/Tessil/robin-map

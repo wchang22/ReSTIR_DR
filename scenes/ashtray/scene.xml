@@ -1,0 +1,147 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+	<default name="spp" value="512"/>
+	<default name="resx" value="1400"/>
+	<default name="resy" value="1400"/>
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="$integrator" />
+	<sensor type="perspective">
+		<string name="fov_axis" value="x"/>
+		<float name="fov" value="39.597755"/>
+		<float name="principal_point_offset_x" value="0.000000"/>
+		<float name="principal_point_offset_y" value="-0.000000"/>
+		<float name="near_clip" value="0.100000"/>
+		<float name="far_clip" value="1000.000000"/>
+		<transform name="to_world">
+			<rotate x="1" angle="46.800128343847206"/>
+			<rotate y="1" angle="12.320064705984512"/>
+			<rotate z="1" angle="2.8654527221943597e-05"/>
+			<translate value="-4.036691 24.352655 -19.088678"/>
+		</transform>
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp"/>
+		</sampler>
+		<film type="hdrfilm">
+			<integer name="width" value="$resx"/>
+			<integer name="height" value="$resy"/>
+		</film>
+	</sensor>
+
+<!-- Materials -->
+
+	<bsdf type="twosided" id="mat-ashtray">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/AshtrayMat_BaseColor.png"/>
+				<string name="filter_type" value="nearest"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<texture type="bitmap" name="metallic">
+				<string name="filename" value="textures/AshtrayMat_Metallic.png"/>
+				<string name="filter_type" value="nearest"/>
+			</texture>
+			<texture type="bitmap" name="anisotropic">
+				<string name="filename" value="textures/AshtrayMat_Anizotropic.png"/>
+				<string name="filter_type" value="nearest"/>
+				<boolean name="raw" value="true"/>
+			</texture>
+			<texture type="bitmap" name="roughness">
+				<string name="filename" value="textures/AshtrayMat_Roughness.png"/>
+				<string name="filter_type" value="nearest"/>
+			</texture>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="1.000000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="diffuse" id="empty-emitter-bsdf">
+		<rgb value="0.000000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Material.003">
+		<bsdf type="principled">
+			<rgb value="0.063721 0.063721 0.063721" name="base_color"/>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.634870"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Material.004">
+		<bsdf type="principled">
+			<rgb value="0.342384 0.342384 0.342384" name="base_color"/>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.806351"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Material">
+		<bsdf type="diffuse">
+			<rgb value="0.083990 0.083990 0.083990" name="reflectance"/>
+		</bsdf>
+	</bsdf>
+
+<!-- Emitters -->
+
+	<emitter type="constant">
+		<rgb value="0.100000 0.100000 0.100000" name="radiance"/>
+	</emitter>
+	<shape type="ply">
+		<string name="filename" value="meshes/Object_2.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="1000.000000 1000.000000 1000.000000" name="radiance"/>
+		</emitter>
+	</shape>
+
+<!-- Shapes -->
+
+	<shape type="ply">
+		<string name="filename" value="meshes/leg_1_low.ply"/>
+		<ref id="mat-ashtray" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Ashtray_low.ply"/>
+		<ref id="mat-ashtray" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/leg_2_low.ply"/>
+		<ref id="mat-ashtray" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/leg_3_low.ply"/>
+		<ref id="mat-ashtray" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Object_3.ply"/>
+		<ref id="mat-Material.003" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Object_4.ply"/>
+		<ref id="mat-Material.004" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Plane.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Material" name="bsdf"/>
+	</shape>
+</scene>

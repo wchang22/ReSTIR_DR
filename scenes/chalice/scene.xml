@@ -1,0 +1,1683 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+	<default name="spp" value="512"/>
+	<default name="resx" value="1400"/>
+	<default name="resy" value="1400"/>
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="$integrator" />
+	<sensor type="perspective">
+		<string name="fov_axis" value="x"/>
+		<float name="fov" value="39.597755"/>
+		<float name="principal_point_offset_x" value="0.000000"/>
+		<float name="principal_point_offset_y" value="-0.000000"/>
+		<float name="near_clip" value="0.100000"/>
+		<float name="far_clip" value="1000.000000"/>
+		<transform name="to_world">
+			<rotate x="1" angle="-159.92020507560264"/>
+			<rotate y="1" angle="66.00013161021155"/>
+			<rotate z="1" angle="179.9998274240379"/>
+			<translate value="166.680283 87.555649 -81.171951"/>
+		</transform>
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp"/>
+		</sampler>
+		<film type="hdrfilm">
+			<integer name="width" value="$resx"/>
+			<integer name="height" value="$resy"/>
+		</film>
+	</sensor>
+
+<!-- Materials -->
+
+	<bsdf type="twosided" id="mat-MASTER_Wood_Painted3.001">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Wood_Painted3_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Bistro_Main_Door">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Bistro_Main_Door_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Glass_Exterior">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Glass_Exterior_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Concrete1">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Concrete1_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Concrete_Yellow">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Concrete_Yellow_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Concrete_Grooved">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Concrete_Grooved_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Concrete">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Concrete_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-ToffeeJar_Metal">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/ToffeeJar_Metal_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-ToffeeJar_Label">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/ToffeeJar_Label_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-CookieJar_Cookies">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/CookieJar_Cookies_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-TransparentGlass.DoubleSided">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/TransparentGlass_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Paris_BarStool">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Paris_BarStool_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Paris_Beertap">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Paris_Beertap_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Plaster">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Plaster_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Wood">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Wood_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Wall_Lamp">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Wall_Lamp_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Plaster_Red">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Plaster_Red_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Wood_Painted3">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Wood_Painted3_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Grid">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Grid_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Brushed_Metal">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Brushed_Metal_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Wooden_stuco">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Wooden_stuco_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Plaster2">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Plaster2_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Frozen_Glass">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Frozen_Glass_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Floor_Tile_Hexagonal_BLENDSHADER">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Floor_Tile_Hexagonal_BLENDSHADER_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Paris_Bartrim">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Paris_Bartrim_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_White_Plastic">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_White_Plastic_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Grid1">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Grid1_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-MASTER_Interior_01_Material">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/MASTER_Interior_01_Material_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="diffuse" id="empty-emitter-bsdf">
+		<rgb value="0.000000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Paris_LiquorBottle_01_Caps">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Paris_LiquorBottle_01_Caps_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Paris_Table_03">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Paris_Table_03_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Paris_LiquorBottle_01_Glass_Wine">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Paris_LiquorBottle_01_Glass_Wine_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-NapkinHolder_01">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/NapkinHolder_01_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Paris_Wall_Bulb_Light">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Paris_Wall_Bulb_Light_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Metal_Bronze_01">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Metal_Bronze_01_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-Metal_Chrome1">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/Metal_Chrome1_BaseColor.png"/>
+			</texture>
+			<float name="spec_tint" value="1.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.552786"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-chalice">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/chalice_albedo.jpg"/>
+				<string name="filter_type" value="nearest"/>
+			</texture>
+			<float name="spec_trans" value="0.000000"/>
+			<texture type="bitmap" name="metallic">
+				<string name="filename" value="textures/chalice_metallic.jpg"/>
+				<string name="filter_type" value="nearest"/>
+				<boolean name="raw" value="true"/>
+			</texture>
+			<float name="anisotropic" value="0.000000"/>
+			<texture type="bitmap" name="roughness">
+				<string name="filename" value="textures/chalice_roughness.jpg"/>
+				<string name="filter_type" value="nearest"/>
+				<boolean name="raw" value="true"/>
+			</texture>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.001000"/>
+		</bsdf>
+	</bsdf>
+
+<!-- Emitters -->
+
+	<emitter type="envmap">
+		<string name="filename" value="textures/ballroom_1k.exr"/>
+		<float name="scale" value="10.000000"/>
+		<transform name="to_world">
+			<matrix value="0.000000 0.000000 1.000000 0.000000 0.000000 1.000000 0.000000 0.000000 -1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000"/>
+		</transform>
+	</emitter>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2246.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="103.228909 2.554097 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2330.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="103.228909 2.554097 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2332.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="103.228909 2.554097 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2334.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="103.228909 2.554097 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Ceiling_Light_01_2356.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="91.135007 300.000000 30.724707" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Ceiling_Light_02_2358.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="91.135007 300.000000 30.724707" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Ceiling_Light_03_2360.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="91.135007 300.000000 30.724707" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Ceiling_Light_04_2362.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="91.135007 300.000000 30.724707" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_CeilingFan_01A_Base_mesh_246ffa2.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="6.447428 205.577123 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_CeilingFan_01A_Blades_me_50bd6e7.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="6.447428 205.577123 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_CeilingFan_01A_Blades_me_9121057.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="6.447428 205.577123 300.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_01_3266-Paris_Wall_Light_Interior.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="300.000000 11.394744 61.046961" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_02_3268-Paris_Wall_Light_Interior.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="300.000000 11.394744 61.046961" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_03_3272-Paris_Wall_Light_Interior.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="300.000000 11.394744 61.046961" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_04_3274-Paris_Wall_Light_Interior.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="300.000000 11.394744 61.046961" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_05_3276-Paris_Wall_Light_Interior.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="300.000000 11.394744 61.046961" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_06_3278-Paris_Wall_Light_Interior.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="300.000000 11.394744 61.046961" name="radiance"/>
+		</emitter>
+	</shape>
+
+<!-- Shapes -->
+
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_Bistro_bottom_135.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_Bistro_bottom_154.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_Bistro_bottom_156.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_0a4411d.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_0cf6bac.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_1e4b4dc.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_3a60013.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_3fac309.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_4dd945b.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_4ede27c.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_5a5c69a.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_5d03e3c.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_6a06ede.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_6c6bd14.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_6cf62c3.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_6e24abf.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_6ed4738.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_7a01338.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_7f287af.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_8e4a025.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_24aab48.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_27eadcc.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_44e53c1.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_067e37b.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_242e8c8.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_802b95e.ply"/>
+		<ref id="mat-MASTER_Glass_Exterior" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_1467f3b.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_3135e22.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_5032e12.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_6510a8f.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_9720b5d.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_47709f4.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_068092b.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_99903c8.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_523367f.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_619872f.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_739996f.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_763357f.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_5928253.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_a079626.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_ad0af66.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_b52f322.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_bb64ef2.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_c5105f9.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_dbfac9c.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_de4bbd9.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_e34ad0a.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_ef54ad8.ply"/>
+		<ref id="mat-MASTER_Bistro_Main_Door" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_f6a1e16.ply"/>
+		<ref id="mat-MASTER_Concrete1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_f76c94b.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_faaac0f.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_buildi_ff5abe7.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3.001" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_building_01_3.ply"/>
+		<ref id="mat-MASTER_Concrete_Yellow" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_building_01_4.ply"/>
+		<ref id="mat-MASTER_Concrete_Grooved" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Exterior_Paris_Building_01_paris_building_01_5.ply"/>
+		<ref id="mat-MASTER_Concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar_1228-ToffeeJar_Metal.ply"/>
+		<ref id="mat-ToffeeJar_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar_1228-ToffeeJar_Label.ply"/>
+		<ref id="mat-ToffeeJar_Label" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar_1228-CookieJar_Cookies.ply"/>
+		<ref id="mat-CookieJar_Cookies" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar__1230-ToffeeJar_Metal.ply"/>
+		<ref id="mat-ToffeeJar_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar__1230-ToffeeJar_Label.ply"/>
+		<ref id="mat-ToffeeJar_Label" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar__1230-CookieJar_Cookies.ply"/>
+		<ref id="mat-CookieJar_Cookies" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar_Glass_1232.ply"/>
+		<ref id="mat-TransparentGlass.DoubleSided" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_CookieJar_Glass__1234.ply"/>
+		<ref id="mat-TransparentGlass.DoubleSided" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Barstool_01A1_2108.ply"/>
+		<ref id="mat-Paris_BarStool" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Barstool_01A2_2110.ply"/>
+		<ref id="mat-Paris_BarStool" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Barstool_01A3_2112.ply"/>
+		<ref id="mat-Paris_BarStool" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Barstool_01A_2106.ply"/>
+		<ref id="mat-Paris_BarStool" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_BeerTap_01_mesh1_2122.ply"/>
+		<ref id="mat-Paris_Beertap" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_BeerTap_01_mesh_2120.ply"/>
+		<ref id="mat-Paris_Beertap" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2124.ply"/>
+		<ref id="mat-MASTER_Interior_01_Plaster" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2126.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2128-Wall_Lamp.ply"/>
+		<ref id="mat-Wall_Lamp" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2128-MASTER_Interior_01_Plaster_Red.ply"/>
+		<ref id="mat-MASTER_Interior_01_Plaster_Red" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2128-MASTER_Wood_Painted3.ply"/>
+		<ref id="mat-MASTER_Wood_Painted3" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2128-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2128-MASTER_Interior_01_Grid.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2130-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2130-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2132-MASTER_Interior_01_Wooden_stuco.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wooden_stuco" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2132-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2134.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2136.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2140.ply"/>
+		<ref id="mat-MASTER_Interior_01_Plaster2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2142-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2142-MASTER_Interior_01_Frozen_Glass.ply"/>
+		<ref id="mat-MASTER_Interior_01_Frozen_Glass" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2142-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2144.ply"/>
+		<ref id="mat-MASTER_Interior_01_Floor_Tile_Hexagonal_BLENDSHADER" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2146.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2148.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2150.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2152.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2154.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2156.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2158.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2162.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2164.ply"/>
+		<ref id="mat-MASTER_Interior_01_Plaster_Red" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2166.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2168.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2170.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2172.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2174.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2176.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2178.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2180.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2182.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2184.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2188.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2190-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2190-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2192-MASTER_Interior_01_Paris_Bartrim.ply"/>
+		<ref id="mat-MASTER_Interior_01_Paris_Bartrim" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2192-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2194.ply"/>
+		<ref id="mat-MASTER_Interior_01_Paris_Bartrim" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2196.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2198-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2198-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2200-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2200-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2202-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2202-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2204-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2204-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2206-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2206-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2208-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2208-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2210-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2210-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2212-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2212-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2214-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2214-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2216-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2216-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2218-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2218-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2220-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2220-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2222-MASTER_Interior_01_White_Plastic.ply"/>
+		<ref id="mat-MASTER_Interior_01_White_Plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2222-MASTER_Interior_01_Grid1.ply"/>
+		<ref id="mat-MASTER_Interior_01_Grid1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2224.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2226.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2228.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2230.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2232.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2234.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2236.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2238.ply"/>
+		<ref id="mat-MASTER_Interior_01_Material" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2240.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2242-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2242-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2244.ply"/>
+		<ref id="mat-MASTER_Interior_01_Paris_Bartrim" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2248.ply"/>
+		<ref id="mat-MASTER_Interior_01_Paris_Bartrim" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2250.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2252.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2254.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2256.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2258.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2260.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2262.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2264.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2266.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2268.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2270.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2272.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2274.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2276.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2278.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2280.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2282.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2284.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2286.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2288.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2290.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2292.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2294.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2296.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2298.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2300.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2302.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2304.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2306.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2308.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2310.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2312.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2314.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2316.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2318.ply"/>
+		<ref id="mat-MASTER_Interior_01_Paris_Bartrim" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2320.ply"/>
+		<ref id="mat-MASTER_Interior_01_Plaster" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2322.ply"/>
+		<ref id="mat-MASTER_Interior_01_Paris_Bartrim" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2324.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2326-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2326-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2328.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2336-MASTER_Interior_01_Brushed_Metal.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2336-MASTER_Interior_01_Wood.ply"/>
+		<ref id="mat-MASTER_Interior_01_Wood" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2336-MASTER_Interior_01_Plaster_Red.ply"/>
+		<ref id="mat-MASTER_Interior_01_Plaster_Red" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2338.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2340.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2342.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2344.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2346.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2348.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2350.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2352.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_paris_building_01_interior_2354.ply"/>
+		<ref id="mat-MASTER_Interior_01_Brushed_Metal" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_CeilingFan_01A_Base_mesh_01_2364.ply"/>
+		<ref id="mat-Paris_LiquorBottle_01_Caps" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Chair_05__2434.ply"/>
+		<ref id="mat-Paris_Table_03" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_liquorbottle_10__3046-Paris_LiquorBottle_01_Glass_Wine.ply"/>
+		<ref id="mat-Paris_LiquorBottle_01_Glass_Wine" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_liquorbottle_10__3046-Paris_LiquorBottle_01_Caps.ply"/>
+		<ref id="mat-Paris_LiquorBottle_01_Caps" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_liquorbottle_10__3046-ToffeeJar_Label.ply"/>
+		<ref id="mat-ToffeeJar_Label" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_NapkinHolder_01A__3066.ply"/>
+		<ref id="mat-NapkinHolder_01" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Table_02A__3248.ply"/>
+		<ref id="mat-Paris_Table_03" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_01_3266-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_02_3268-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_02A_3270-Wall_Lamp.ply"/>
+		<ref id="mat-Wall_Lamp" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_02A_3270-Metal_Bronze_01.ply"/>
+		<ref id="mat-Metal_Bronze_01" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_02A_3270-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_03_3272-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_04_3274-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_05_3276-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wall_Light_Interior_06_3278-Paris_Wall_Bulb_Light.ply"/>
+		<ref id="mat-Paris_Wall_Bulb_Light" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Bistro_Research_Interior_Paris_Wine_Cooler_01A_3280.ply"/>
+		<ref id="mat-Metal_Chrome1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/chalice.ply"/>
+		<ref id="mat-chalice" name="bsdf"/>
+	</shape>
+</scene>
