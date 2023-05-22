@@ -1,0 +1,628 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+	<default name="spp" value="10"/>
+	<default name="resx" value="1400"/>
+	<default name="resy" value="1400"/>
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="$integrator"/>
+	<sensor type="perspective">
+		<string name="fov_axis" value="x"/>
+		<float name="fov" value="39.597755"/>
+		<float name="principal_point_offset_x" value="0.000000"/>
+		<float name="principal_point_offset_y" value="-0.000000"/>
+		<float name="near_clip" value="0.100000"/>
+		<float name="far_clip" value="1000.000000"/>
+		<transform name="to_world">
+			<rotate x="1" angle="174.6551224362329"/>
+			<rotate y="1" angle="59.24066904905428"/>
+			<rotate z="1" angle="176.8745787466502"/>
+			<translate value="0.377671 0.219628 0.160812"/>
+		</transform>
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp"/>
+		</sampler>
+		<film type="hdrfilm">
+			<integer name="width" value="$resx"/>
+			<integer name="height" value="$resy"/>
+			<rfilter type="gaussian">
+				<float name="stddev" value="1.500000"/>
+			</rfilter>
+		</film>
+	</sensor>
+
+<!-- Materials -->
+
+	<bsdf type="diffuse" id="mat-Wood3SG">
+		<rgb value="0.360000 0.270000 0.240000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Stone03SG">
+		<rgb value="0.240000 0.260000 0.240000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE6SG">
+		<rgb value="0.270000 0.500000 0.280000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Wood4SG">
+		<rgb value="0.360000 0.270000 0.240000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="twosided" id="mat-pine">
+		<bsdf type="principled">
+			<texture type="bitmap" name="base_color">
+				<string name="filename" value="textures/pine-needles.png"/>
+				<string name="filter_type" value="nearest"/>
+			</texture>
+			<float name="spec_tint" value="0.000000"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<texture type="bitmap" name="roughness">
+				<string name="filename" value="textures/pine-needles-roughness.png"/>
+				<string name="filter_type" value="nearest"/>
+			</texture>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheen_tint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.173205"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-initialShadingGroup1">
+		<rgb value="0.500000 0.500000 0.500000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Yellow_ChromeSG">
+		<rgb value="0.290000 0.260000 0.000000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Stone02SG">
+		<rgb value="0.270000 0.310000 0.340000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn1SG2">
+		<rgb value="0.340000 0.320000 0.320000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE3SG">
+		<rgb value="0.420000 0.290000 0.200000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-lambert5SG">
+		<rgb value="0.590000 0.200000 0.170000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-FloorBoards5SG">
+		<rgb value="0.310000 0.270000 0.250000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Red_MetalSG">
+		<rgb value="0.640000 0.200000 0.240000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-WoodTrimSG">
+		<rgb value="0.920000 0.880000 0.850000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn1SG4">
+		<rgb value="0.500000 0.110000 0.110000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Bright_JewelSG">
+		<rgb value="0.350000 0.310000 0.000000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Stocking_UpperSG">
+		<rgb value="0.820000 0.810000 0.800000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE7SG">
+		<rgb value="0.340000 0.340000 0.340000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn1SG">
+		<rgb value="0.460000 0.480000 0.500000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-TissuePaperSG">
+		<rgb value="0.860000 0.340000 0.510000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-PineNeedles1SG">
+		<rgb value="0.510000 0.690000 0.250000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-PaintedWallsSG">
+		<rgb value="0.870000 0.830000 0.810000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE2SG2">
+		<rgb value="0.140000 0.140000 0.140000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn3SG">
+		<rgb value="0.680000 0.540000 0.260000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn4SG2">
+		<rgb value="0.760000 0.570000 0.740000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE1SG2">
+		<rgb value="0.710000 0.680000 0.660000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn3SG2">
+		<rgb value="0.500000 0.090000 0.150000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn2SG">
+		<rgb value="0.360000 0.310000 0.260000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="empty-emitter-bsdf">
+		<rgb value="0.000000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE2SG">
+		<rgb value="0.120000 0.430000 0.170000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE1SG">
+		<rgb value="0.480000 0.250000 0.160000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-TreeTipSG">
+		<rgb value="0.400000 0.380000 0.140000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE1SG4">
+		<rgb value="0.500000 0.500000 0.500000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE3SG2">
+		<rgb value="0.420000 0.290000 0.200000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Fireplace1SG">
+		<rgb value="0.670000 0.620000 0.570000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-phongE8SG">
+		<rgb value="0.270000 0.160000 0.130000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn2SG2">
+		<rgb value="0.500000 0.500000 0.500000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-anisotropic1SG">
+		<rgb value="0.890000 0.340000 0.400000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-blinn4SG">
+		<rgb value="0.190000 0.190000 0.190000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Wrapping_Paper_Red2SG">
+		<rgb value="0.690000 0.150000 0.150000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-Stone04SG">
+		<rgb value="0.260000 0.240000 0.220000" name="reflectance"/>
+	</bsdf>
+
+<!-- Emitters -->
+
+	<emitter type="constant">
+		<rgb value="0.056563 0.220815 0.400000" name="radiance"/>
+	</emitter>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeTopper_Outer_Brig.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="20.000000 17.988282 0.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Tree_Lights_Bulbs_pho.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="100.000000 0.447810 0.000000" name="radiance"/>
+		</emitter>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Tree_Light_Cords_phon.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<emitter type="area">
+			<rgb value="6.368383 150.000000 78.454972" name="radiance"/>
+		</emitter>
+	</shape>
+
+<!-- Shapes -->
+
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserWall02_Wood3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Flagsto_001.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stone03SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeStand_Legs_Body_p.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE6SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserDrawer02_Wood3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Log1_Wood4S.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood4SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/PineNeedles02_PineNee.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-pine" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Roof_initialShadingGr.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-initialShadingGroup1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeTopper_Base_Yello.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Yellow_ChromeSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserWall05_Wood3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Flagsto.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stone02SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Flagstones_.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn1SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserHardware_phong.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserDrawer03_Wood3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserWall04_Wood3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Rug_UnderTree_lambert.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-lambert5SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Floorboards3_FloorBoa.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-FloorBoards5SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeTopper_Jewel_Red_.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Red_MetalSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Floorboards5_FloorBoa.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-FloorBoards5SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Walls_Moldings_WoodTr.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-WoodTrimSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Boxes1_blinn1SG4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn1SG4" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeTopper_Inner_Brig.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Bright_JewelSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Walls_Wainscoting_Woo.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-WoodTrimSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Floorboards1_FloorBoa.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-FloorBoards5SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Upper_2_Stoc.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stocking_UpperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeStand_Screws2_pho.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE7SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserWall01_Wood3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeStand_Screws1_pho.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE7SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Tree_BallCaps_blinn1S.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn1SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/WrappedBottle03_Tissu.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-TissuePaperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/EndBudOuter_PineNeedl.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-PineNeedles1SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Walls_PaintedWallsSG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-PaintedWallsSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Tree_BallHooks_phongE.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE7SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/PineNeedles01_PineNee.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-pine" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Floorboards4_FloorBoa.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-FloorBoards5SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Window_Handles_phongE.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Window_Glass_phongE2S.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE2SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserWall03_Wood3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Cards_blinn3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Tissue_blinn4SG2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn4SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Boxes2_phongE1SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE1SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserDrawer01_Wood3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Lower_2_blin.ply"/>
+		<ref id="mat-blinn3SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeStand_Bowl_Red_Me.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Red_MetalSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_MantelB.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn2SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Upper_1_Stoc.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stocking_UpperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Foundation_initialSha.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-initialShadingGroup1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Walls_Trim_WoodTrimSG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-WoodTrimSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Ball_Stand_phongE3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Log2_Wood4S.ply"/>
+		<ref id="mat-Wood4SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/WrappedBottleTop03_Ti.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-TissuePaperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Lower_1_blin.ply"/>
+		<ref id="mat-blinn3SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserTop_Wood3SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Tree_Lights_Bases_pho.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE2SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/WrappedBottleTop02_Ti.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-TissuePaperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserDrawer05_Wood3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Loop_1_Stock.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stocking_UpperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeTrunk_phongE1SG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE1SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/EndBudsInner_TreeTipS.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-TreeTipSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Ball1_phongE1SG4.ply"/>
+		<ref id="mat-phongE1SG4" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/PineNeedles04_PineNee.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-pine" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Doorframe1_WoodTrimSG.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-WoodTrimSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Mantel_blin.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn2SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/DresserDrawer04_Wood3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wood3SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Hook_2_phong.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE3SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_MantelBrace.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn2SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Window_Frames_WoodTri.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-WoodTrimSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/ExtraRoom_initialShad.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-initialShadingGroup1" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeTopper_Pedistal_Y.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Yellow_ChromeSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_MainBody_Fi.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Fireplace1SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Tree_Balls_phongE8SG.ply"/>
+		<ref id="mat-phongE8SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Tape_blinn2SG2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn2SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/WrappedBottle02_Tissu.ply"/>
+		<ref id="mat-TissuePaperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Loop_2_Stock.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stocking_UpperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/WrappedBottleTop01_Ti.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-TissuePaperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Floorboards2_FloorBoa.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-FloorBoards5SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Boxes3_blinn1SG4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn1SG4" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Ribbons_anisotro.ply"/>
+		<ref id="mat-anisotropic1SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Stocking_Hook_1_phong.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE3SG2" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_LogStand_bl.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-blinn4SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Gift_Boxes3_Wrapping_.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Wrapping_Paper_Red2SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Fireplace_Floor_Stone.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-Stone04SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/Dooorframe2_WoodTrimS.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-WoodTrimSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/WrappedBottle01_Tissu.ply"/>
+		<ref id="mat-TissuePaperSG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/TreeBranches_phongE1S.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-phongE1SG" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/PineNeedles03_PineNee.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-pine" name="bsdf"/>
+	</shape>
+</scene>
