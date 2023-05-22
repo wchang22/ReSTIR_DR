@@ -18,7 +18,7 @@ scenes = [
     { 'name': 'ashtray',
       'path': '../scenes/ashtray/scene.xml',
       'key': 'mat-ashtray.brdf_0.anisotropic.data',
-      'restir_spp': [1, 1],
+      'restir_spp': 1,
       'mitsuba_spp': 1,
       'time': 50e3,
     },
@@ -97,7 +97,7 @@ opt = mi.ad.Adam(lr=learning_rate)
 opt[key] = params[key]
 params.update(opt);
 
-def get_equal_time_optimization(use_ref, use_positivization, n_time, spp_forward, spp_grad, restir_initial_spp_grad=None, M_cap=None):
+def get_equal_time_optimization(use_ref, use_positivization, n_time, spp_forward, spp_grad, M_cap=None):
     np.random.seed(0)
     
     # Reset initial params
@@ -119,7 +119,7 @@ def get_equal_time_optimization(use_ref, use_positivization, n_time, spp_forward
     while True:
         # Perform a (noisy) differentiable rendering of the scene
         image = mi.render(scene, params, spp=spp_forward,
-            spp_grad=restir_initial_spp_grad if it == 0 else spp_grad,
+            spp_grad=spp_grad,
             seed=np.random.randint(2**31))
 
         # Evaluate the objective function from the current rendered image
@@ -153,13 +153,13 @@ def get_equal_time_optimization(use_ref, use_positivization, n_time, spp_forward
 #%% Run equal time optimization
 
 positivization_times, positivization_losses, positivization_param_errs, positivization_param = \
-    get_equal_time_optimization(False, True, s['time'], spp_forward, s['restir_spp'][0], restir_initial_spp_grad=s['restir_spp'][1], M_cap=s.get('restir_mcap', 16))
+    get_equal_time_optimization(False, True, s['time'], spp_forward, s['restir_spp'], M_cap=s.get('restir_mcap', 16))
 
 abs_times, abs_losses, abs_param_errs, abs_param = \
-    get_equal_time_optimization(False, False, s['time'], spp_forward, s['restir_spp'][0], restir_initial_spp_grad=s['restir_spp'][1], M_cap=s.get('restir_mcap', 16))
+    get_equal_time_optimization(False, False, s['time'], spp_forward, s['restir_spp'], M_cap=s.get('restir_mcap', 16))
 
 mitsuba_times, mitsuba_losses, mitsuba_param_errs, mitsuba_param = \
-    get_equal_time_optimization(True, False, s['time'], spp_forward, s['mitsuba_spp'], restir_initial_spp_grad=s['restir_spp'][1]) 
+    get_equal_time_optimization(True, False, s['time'], spp_forward, s['mitsuba_spp']) 
 
 #%% Output equal time optimization
 plt.clf()
